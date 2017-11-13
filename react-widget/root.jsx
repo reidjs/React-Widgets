@@ -2,6 +2,7 @@ import React from 'react';
 import Clock from './frontend/clock';
 import Tabs from './frontend/tabs';
 import Weather from './frontend/weather';
+import AutoComplete from './frontend/autocomplete';
 
 class Root extends React.Component {
   constructor() {
@@ -20,14 +21,17 @@ class Root extends React.Component {
         content: 'I am the third'
       }
     ];
+
+    this.names = ["Bob", "George", "Bobo", "Charles", "Charlie"];
   }
 
   render() {
     return (
       <div>
         <Clock className='clock' />
-        <Weather />
+        <Weather className='weatherdiv'/>
         <Tabs className='tabs' data={this.tabs}/>
+        <AutoComplete names={this.names}/>
       </div>
     );
   }

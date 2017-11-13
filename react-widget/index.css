@@ -73,3 +73,22 @@ html {
   text-align: center;
   margin-top: 90px;
 }
+.weatherdiv {
+  margin-top: 10px;
+}
+.weather {
+  margin-top: 40px;
+  margin: 0 auto;
+  width: 125px;
+  height: 100px;
+  background: green;
+  border: 1px solid black;
+}
+.weather p {
+  text-align: center;
+}
+
+input {
+  border: 1px solid black;
+  
+}
