@@ -12,14 +12,13 @@ class AutoComplete extends React.Component {
   handleChange(e) {
     e.preventDefault();
     const inputValue = e.target.value;
-    console.log(this.allNames);
+    // console.log(this.allNames);
     // this.state.possibleNames = "johnny";
     // const temp = this.allNames[0];
     let result = [];
     this.allNames.forEach((name) => {
       if (name.toLowerCase().indexOf(inputValue) >= 0) {
         result.push(name);
-        console.log(name, inputValue, name.indexOf(inputValue));
       }
     });
     const possibleNames = result;
@@ -31,13 +30,18 @@ class AutoComplete extends React.Component {
     this.setState({inputValue, possibleNames});
   }
   render() {
+    const names = this.state.possibleNames;
+    const listNames = names.map((name) =>
+      <li>{name}</li>
+    );
     return (
       <div>
         <input type="text" value={this.state.inputValue} onChange={this.handleChange}></input>
-        <p>{this.state.possibleNames}</p>
+        <ul>{listNames}</ul>
       </div>
     );
   }
 }
+// <ul>{this.state.possibleNames}</ul>
 
 export default AutoComplete;
